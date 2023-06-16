@@ -6,12 +6,14 @@ import { Link } from "react-router-dom";
 
 const Read = () => {
   const [readData, setReadData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const getData = () => {
     axios
       .get("https://6485e6b1a795d24810b77455.mockapi.io/crud-operation")
       .then((response) => {
         //console.log(response.data)
         setReadData(response.data);
+        setIsLoading(false)
       });
   };
   useEffect(() => {
@@ -32,6 +34,7 @@ const Read = () => {
     <>
       <Container>
         <h2>Read Operation</h2>
+        <p style={{padding: "20px, 0px", fontSize:"22px"}}>{isLoading ? "Loading..." : null}</p>
         <Table striped bordered hover>
           <thead>
             <tr>

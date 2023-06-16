@@ -34,7 +34,7 @@ const Create = () => {
         //navigate function, instructing it to navigate to the '/read' route
       });
   };
-
+  
   return (
     <>
       <Container>
